@@ -3,7 +3,6 @@ var http = require('http');
 var logger = require('morgan');
 var bodyParser = require('body-parser')
 var request = require('request');
-var config = require('./config.json');
 var app = express();
 
 app.use(logger('short'));
@@ -20,7 +19,7 @@ app.post('/issue', function(req, resp){
 	if (req.body.action == "opened") {
 		console.log("opened");
 		var options = {
-			url: "https://api.trello.com/1/lists/" + config.list + "/cards?key=" + config.key + "&token=" + config.token + "",
+			url: "https://api.trello.com/1/lists/" + process.env.LIST + "/cards?key=" + process.env.KEY + "&token=" + process.env.TOKEN + "",
 			method: "POST",
 			body: '{"name": "'+ req.body.title + '", "desc": "' + req.body.body + '"}',
 			headers: {
