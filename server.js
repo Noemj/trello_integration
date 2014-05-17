@@ -19,7 +19,6 @@ function callback(error, response, body){
 
 app.post('/issue', function(req, resp){
   if (req.body.action == "opened") {
-    console.log("opened");
     var options = {
       url: 'https://api.trello.com/1/lists/' + list + '/cards?key=' + key + '&token=' + token + '',
       method: 'POST',
