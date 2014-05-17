@@ -12,24 +12,24 @@ var key = String(process.env.KEY || config.key);
 var token = String(process.env.TOKEN || config.token); 
 
 function callback(error, response, body){
-	if (error){
-		console.log(error);
-	}
+  if (error){
+    console.log(error);
+  }
 }
 
 app.post('/issue', function(req, resp){
-	if (req.body.action == "opened") {
-		console.log("opened");
-		var options = {
-			url: 'https://api.trello.com/1/lists/' + list + '/cards?key=' + key + '&token=' + token + '',
-			method: 'POST',
-			body: '{"name": "'+ req.body.issue.title + '", "desc": "' + req.body.issue.body + '"}',
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		};
-		request(options, callback);
-	}
+  if (req.body.action == "opened") {
+    console.log("opened");
+    var options = {
+      url: 'https://api.trello.com/1/lists/' + list + '/cards?key=' + key + '&token=' + token + '',
+      method: 'POST',
+      body: '{"name": "'+ req.body.issue.title + '", "desc": "' + req.body.issue.body + '"}',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    request(options, callback);
+  }
 })
 
 var port = Number(process.env.PORT || 8080);
