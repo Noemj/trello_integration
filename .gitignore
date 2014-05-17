@@ -2,3 +2,4 @@ npm-debug.log
 *.iml
 build/
 node_modules/
+config.json
