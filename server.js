@@ -21,7 +21,7 @@ app.post('/issue', function(req, resp){
 		var options = {
 			url: "https://api.trello.com/1/lists/" + process.env.LIST + "/cards?key=" + process.env.KEY + "&token=" + process.env.TOKEN + "",
 			method: "POST",
-			body: '{"name": "'+ req.body.title + '", "desc": "' + req.body.body + '"}',
+			body: '{"name": "'+ req.body.issue.title + '", "desc": "' + req.body.issue.body + '"}',
 			headers: {
 				'Content-Type': 'application/json'
 			}
