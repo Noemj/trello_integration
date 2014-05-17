@@ -1,5 +1,16 @@
+var express = require('express');
 var http = require('http');
-http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Hello World\n');
-}).listen(8080);
+var logger = require('morgan');
+var bodyParser = require('body-parser')
+
+var app = express();
+
+app.use(logger('short'));
+app.use(bodyParser());
+
+app.post('/issue', function(req, resp){
+	resp.send('GitHub issue and Trello integration');
+})
+
+var port = Number(process.env.PORT || 8080);
+http.createServer(app).listen(port);
