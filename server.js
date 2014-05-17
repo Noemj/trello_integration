@@ -23,12 +23,13 @@ app.post('/issue', function(req, resp){
     var options = {
       url: 'https://api.trello.com/1/lists/' + list + '/cards?key=' + key + '&token=' + token + '',
       method: 'POST',
-      body: '{"name": "'+ req.body.issue.title + '", "desc": "' + req.body.issue.body + '"}',
+      body: '{"name": "'+ req.body.issue.title + '", "desc": "' req.body.issue.url + '\n' + req.body.issue.body + '"}',
       headers: {
         'Content-Type': 'application/json'
       }
     };
     request(options, callback);
+    resp.send(200);
   }
 })
 
