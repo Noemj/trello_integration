@@ -1,0 +1,25 @@
+{
+  "name": "trello_integration",
+  "version": "0.0.0",
+  "description": "GitHub issue tandTrello integration",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Noemj/trello_integration"
+  },
+  "keywords": [
+    "github",
+    "trello",
+    "integration"
+  ],
+  "author": "Noemj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Noemj/trello_integration/issues"
+  },
+  "homepage": "https://github.com/Noemj/trello_integration"
+}
