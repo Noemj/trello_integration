@@ -8,7 +8,7 @@ var app = express();
 app.use(bodyParser());
 
 var list = String(process.env.LIST || config.list);
-var key = String(process.env.KEY || config.key);
+var key = String(process.env.KEY || config.key);
 var token = String(process.env.TOKEN || config.token); 
 
 function callback(error, response, body){
