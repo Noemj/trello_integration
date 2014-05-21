@@ -28,8 +28,8 @@ app.post('/issue', function(req, resp){
       }
     };
     request(options, callback);
-    resp.send(200);
   }
+  resp.send(200);
 })
 
 var port = Number(process.env.PORT || 8080);
